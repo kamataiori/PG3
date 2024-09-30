@@ -2,8 +2,8 @@
 
 int main() {
 
-	printf("Hellow World\n");
-	printf("‚±‚ñ‚É‚¿‚í\n");
+	printf("Hello World\n");
+	printf("ã“ã‚“ã«ã¡ã‚\n");
 	printf("PG3");
 
 	return 0;
