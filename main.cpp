@@ -2,20 +2,21 @@
 #include <cstdlib>
 #include <ctime>
 #include <functional>
+#include <windows.h> 
 
 // サイコロの目をランダムに決める関数
 int rollDice() {
     return (rand() % 6) + 1;
 }
 
-// 3秒間待機
-void setTimeout(std::function<void()> callback, int delay) {
-    for (int i = 0; i < delay; ++i) {
+// 1秒ごとに「.」を表示し、合計delay秒間待機する関数
+void setTimeout(std::function<void()> callback, int delaySeconds) {
+    for (int i = 0; i < delaySeconds; ++i) {
         printf(". ");
-        fflush(stdout);
-        for (int j = 0; j < 100000000; ++j); 
+        fflush(stdout);  // 出力をすぐに反映させる
+        Sleep(1000);     // 1秒待機
     }
-    callback();
+    callback();  // 待機が終わった後にコールバック関数を実行
 }
 
 // 判定を行う関数
@@ -23,11 +24,11 @@ void judge(int diceRoll, std::function<int()> userGuessFunc, std::function<void(
     int userGuess = userGuessFunc();
     int isCorrect = ((diceRoll % 2 == 0) && (userGuess == 0)) || ((diceRoll % 2 != 0) && (userGuess == 1));
 
-    // 3秒待機してから結果を表示
+    // 1秒ごとに「.」を表示しながら3秒待機してから結果を表示
     setTimeout([=]() {
         printf("\nサイコロの出た目は %d です", diceRoll);
         callback(isCorrect);
-        }, 3);
+        }, 3);  // 3秒待機
 }
 
 // 判定結果を表示する関数
