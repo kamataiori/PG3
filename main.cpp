@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <windows.h>
 
 // ランダムにサイコロを振る関数
 int rollDice() {
@@ -23,15 +24,16 @@ void judge(int diceRoll, int (*userGuessFunc)(), void (*callback)(int)) {
 	int isCorrect = ((diceRoll % 2 == 0) && (userGuess == 0)) || ((diceRoll % 2 != 0) && (userGuess == 1));
 
 	// 3秒待機
-	for (int i = 0; i < 3; ++i) {
-		printf(". ");
-
-		for (int j = 0; j < 100000000; ++j);
-	}
+	printf(". ");
+	Sleep(1000);
+	printf(". ");
+	Sleep(1000);
+	printf(". ");
+	Sleep(1000);
 
 	// コールバック関数を使って結果を表示
 	printf("\nサイコロの出た目は %d です", diceRoll);
-		callback(isCorrect);
+	callback(isCorrect);
 }
 
 // ユーザーの入力を受け取る関数
