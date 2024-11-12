@@ -128,10 +128,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Appliance.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Microwave.cpp" />
+    <ClCompile Include="Refrigerator.cpp" />
+    <ClCompile Include="WashingMachine.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Appliance.h" />
+    <ClInclude Include="Microwave.h" />
+    <ClInclude Include="Refrigerator.h" />
+    <ClInclude Include="WashingMachine.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
