@@ -1,10 +1,16 @@
 #include <stdio.h>
+#include <thread>
+#include "Enemy.h"
 
 int main() {
 
-	printf("Hello World\n");
-	printf("こんにちわ\n");
-	printf("PG3");
+    Enemy enemy;
+    // ループしてUpdateを呼び出し続ける
+    for (int i = 0; i < 9; ++i) { 
+        enemy.Update();
 
-	return 0;
+        // スリープ関数でループごとに1秒待機
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+    }
+    return 0;
 }
