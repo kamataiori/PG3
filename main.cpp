@@ -1,10 +1,16 @@
-#include <stdio.h>
+#include "Circle.h"
+#include "Rectangle.h"
 
 int main() {
+    Circle circle(5.0);
+    Rectangle rectangle(4.0, 6.0);
 
-	printf("Hello World\n");
-	printf("こんにちわ\n");
-	printf("PG3");
+    IShape* shapes[] = { &circle, &rectangle };
 
-	return 0;
+    for (const auto* shape : shapes) {
+        shape->Size();
+        shape->Draw();
+    }
+
+    return 0;
 }
