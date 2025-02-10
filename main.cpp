@@ -12,8 +12,7 @@ int rollDice() {
 void printResult(int isCorrect) {
 	if (isCorrect) {
 		printf("\n正解！\n");
-	}
-	else {
+	}else {
 		printf("\n不正解...\n");
 	}
 }
