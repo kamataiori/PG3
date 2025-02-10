@@ -35,8 +35,7 @@ void judge(int diceRoll, std::function<int()> userGuessFunc, std::function<void(
 void printResult(int isCorrect) {
     if (isCorrect) {
         printf("\n正解！\n");
-    }
-    else {
+    }else {
         printf("\n不正解...\n");
     }
 }
