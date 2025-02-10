@@ -42,8 +42,7 @@ int main() {
     //再帰的な資金体系が一般的な資金体系を上回るかどうかを表示
     if (totalRecursiveWage > totalStandardWage) {
         printf("再帰的な資金体系のほうが儲かります。\n");
-    }
-    else {
+    }else {
         printf("一般的な資金体系のほうが儲かります。\n");
     }
 
